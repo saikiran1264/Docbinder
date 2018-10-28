@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Login</title>
+    
+    <script type="text/javascript">
+        function bodyHeight() {
+            $('body').css('height', $(window).height());
+        }
+        window.onload = bodyHeight;
+    </script>
+</head>
+
+<body>
+    <!--application UI goes here-->
+    <div class="container-fluid" ng-controller = "LoginCtrl">
+        <div class="row">
+            
+            <!--Login-->
+            <div class="col-xs-12 padd0 login-container">
+                <div class="col-xs-12 padd0 login-logo">
+                        
+                    <div class="col-xs-12 padd0 ">
+					<h1 style="font-size: 30px;font-weight: bold;text-align: center;padding: 30px 0;color:black;">WELCOME</h1>
+                    </div>
+                </div>
+                <div class=" col-xs-12 padd0 alert alert-success" style="text-align:center;" ng-show="nomail">
+                        <strong style="font-weight:bold;text-align:center;">Email doesn't exist</strong> 
+                </div>
+                <div class=" col-xs-12 padd0 alert alert-success" style="text-align:center;" ng-show="nomatch">
+                        <strong style="font-weight:bold;text-align:center;">Email and Password doesn't match</strong> 
+                </div>
+                <div class="col-xs-12 padd0 login-form">
+
+                    <section class="col-xs-12 padd0 ">
+
+                        <div class="col-xs-12 padd0">
+						  <form name="form" ng-submit ="login()">
+                            <div class="login-form">
+								
+                                <input type="text" placeholder="Email" ng-model="username" />
+                                
+                            </div>
+                            <div class="login-form">
+
+                                <input type="password" placeholder="Password" ng-model="password"/>
+                                
+                            </div>
+                            <div class="login-form login-button">
+                                <button type="submit">LOGIN</button>
+                            </div>
+						  </form>
+                            <div class="login-form textCenterAlign register-button">
+                                <span>Not a member ?</span><a href="#!register">Sign Up</a>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+                 
+            </div>
+            <!--Login-->
+        </div>
+        
+    </div>
+
+</body>
+
+</html>

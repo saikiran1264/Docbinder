@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Dashboard</title>
+   
+    <script type="text/javascript">
+        function bodyHeight() {
+            $('body').css('height', $(window).height());
+            $('.dash-board-section').css('height', $(window).height() - 115);
+
+        }
+        window.onload = bodyHeight;
+    </script>
+</head>
+
+<body style="background:#5DBCD2;background-image: none;">
+    <!--application UI goes here-->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--Dashboard-->
+            <header class="col-xs-12 padd0" style="padding-top: 5px;" ng-controller = "DashboardCtrl">
+                <div class="col-xs-2 padd0 dashboard-menu "><span  onclick="openNav()"> </span></div>
+                <div class="col-xs-9 padd0 dashboard-header">
+                    
+                    <div><button class="col-xs-1 wifi-expand" style="float:right;background:transparent;border:none;" ng-click="logout()"><span></span></button></div>
+					<div style="float:right">
+                    <label style="margin:12px;">Welcome {{username}}</label>
+                       
+                    </div>
+                </div>
+            </header>
+            <section class="dash-board-section">
+                <div class="col-xs-12 dashboard-billing-section">
+			
+				<div class="files-data">
+
+    <table style="width:100%" id ="filetable">
+    <tr>
+        <th>User Name</th>
+        <th colspan="2">File Name</th>
+        <th colspan="2">File Description</th>
+        <th>File Size</th>
+        <th>File Created Time</th>
+        <th>File Updated Time</th>
+        <th >Download</th>
+        <th >Delete</th>
+        
+    </tr>
+        <tr ng-repeat = "filedetails in filedata  track by $index">
+        <td>{{filedetails.Email_Id}}</td>    
+        <td colspan="2">{{filedetails.File_Name}}</td>
+        <td colspan="2">{{filedetails.File_Description}}</td>
+        <td>{{filedetails.File_Size}}</td>
+        <td>{{filedetails.File_Created_Time}}</td>
+        <td>{{filedetails.File_Updated_Time}}</td>
+        <td><button class="downloadFile" style="background:transparent;border:none;" ng-click = "downloadfile($index)"><span></span></button></td>
+        <td><button class="deleteFile" style="background:transparent;border:none;" ng-click = "deletefile($index)"><span></span></button></td>
+        
+    </tr>
+    
+
+    </table>
+
+
+
+                </div>
+            </section>
+            
+            <!--Dashboard-->
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Registration</title>
+    
+
+   
+    <script type="text/javascript">
+        function bodyHeight() {
+            $('body').css('height', $(window).height());
+        }
+        window.onload = bodyHeight;
+    </script>
+</head>
+
+<body>
+    <!--application UI goes here-->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--Registration-->
+            <div class="col-xs-12 padd0 login-container">
+                <div class="col-xs-12 padd0 login-logo">
+                    <div class="col-xs-12 padd0 ">
+					<h1 style="font-size: 30px;font-weight: bold;text-align: center;padding: 30px 0;color:black;">Sign Up!</h1>
+                    </div>
+                </div>
+				<div class="col-xs-12 padd0 alert alert-danger" style="text-align: center;" ng-show="duplicate">
+					<strong style="font-weight:bold;text-align: center;">User already exists!!!</strong> 
+                </div>
+				<div class="col-xs-12 padd0 alert alert-success" style="text-align: center;" ng-show="successregistration">
+					<strong style="font-weight:bold;">User Registered Successfully</strong> 
+                </div>
+				
+                <div class="col-xs-12 padd0 login-form">
+
+                    <section class="col-xs-12 padd0 ">
+					
+					  <form name="register" ng-submit="Register()" role="form">
+					  
+                        <div class="col-xs-12 padd0">
+
+                            <div class="login-form signUp-first-name">
+								
+                                <input type="text" placeholder="First Name"  ng-model="firstName" />
+								
+                            </div>
+							 <div class="login-form signUp-last-name">
+								
+                               
+								 <input type="text" placeholder="Last Name" ng-model="lastName"/>
+                            </div>
+							
+							 <div class="login-form">
+								
+                                <input type="text" placeholder="Email" ng-model="email" />
+                            </div>
+							
+                            
+							<div class="login-form">
+
+                                <input type="password" placeholder="New Password" ng-model="password"/>
+                                
+                            </div>
+							<!--<div class="login-form">
+
+                                <input type="password" placeholder="Re-enter Password" />
+                                
+                            </div> -->
+                            <div class="login-form login-button">
+                                <button type="submit">Sign Up</button><br></br>
+								<button><a href="#!/login" style= "color:white;text-decoration:none;">Cancel </a></button>
+                            </div>
+
+                        </div>
+						
+					  </form>
+					  
+                    </section>
+                </div>
+                
+            </div>
+            <!--Registration-->
+	
+        </div>
+    </div>
+		
+		   
+
+</body>
+
+</html>

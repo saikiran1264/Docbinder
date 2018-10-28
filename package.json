@@ -1,0 +1,29 @@
+{
+  "name": "Docbinder",
+  "private": true,
+  "version": "0.0.1",
+  "description": "DocBinder",
+  "repository": "https://github.com/angular/angular-seed",
+  "license": "MIT",
+  "main": "server.js",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "http-server": "^0.9.0"
+   
+  },
+  "scripts": {
+    
+    "start": "node server.js"
+    
+  },
+  "dependencies": {
+    "aws-sdk": "^2.337.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.0.0-alpha.1",
+    "formidable": "^1.2.1",
+    "jquery": "^3.3.1",
+    "mysql": "^2.16.0"
+  }
+}
