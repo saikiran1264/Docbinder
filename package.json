@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.0.1",
   "description": "DocBinder",
-  "repository": "https://github.com/angular/angular-seed",
+  "repository": "https://github.com/saikiran1264/Docbinder",
   "license": "MIT",
   "main": "server.js",
   "devDependencies": {
     "bower": "^1.7.7",
-    "http-server": "^0.9.0"
+    
    
   },
   "scripts": {
