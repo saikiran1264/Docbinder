@@ -2,7 +2,8 @@
 'use strict'
 
 app.controller("LoginCtrl", function($scope,$location,$http,$rootScope,$timeout) {
-  
+
+   
   /**Login Authentication */
   $scope.login = function(){
 		
@@ -19,6 +20,7 @@ app.controller("LoginCtrl", function($scope,$location,$http,$rootScope,$timeout)
                  'Content-Type': 'application/json' },
       }).then (function success(response) {
           //console.log(response.data.data.Email);
+          console.log(response.data.code);
           console.log(response.data);
             localStorage.username = $scope.username;
             localStorage.firstname = $scope.firstName;
@@ -35,7 +37,7 @@ app.controller("LoginCtrl", function($scope,$location,$http,$rootScope,$timeout)
             
           } else if (response.data.code==206)
             {
-              
+              console.log("hi");
               $scope.nomail=true;
               $location.path('/login');
             }
@@ -101,4 +103,73 @@ app.controller("LoginCtrl", function($scope,$location,$http,$rootScope,$timeout)
   };  
   
   /**Register */
+
+/**google and facebook */
+
+$scope.onGooglelogin = function(){
+  //alert('clicked');
+   var params = {
+       'clientid': '820020195761-4c774rahuvtqpo10lflbpieth5vlbfut.apps.googleusercontent.com',
+       'cookiepolicy': 'single_host_origin',
+       'callback': function(result){  
+           if(result['status']['signed_in']){
+               var request = gapi.client.plus.people.get({
+                   userId: 'me'
+               });
+               //console.log("hello");
+               request.execute(function(resp){
+                   //console.log("resp", resp);
+                   //console.log("reached");
+                   $scope.$apply(function() {
+
+                        //$scope.username = resp.displayName;
+                        //$scope.password = resp.displayName;
+                        //$scope.email = resp.emails[0].value;
+
+                       localStorage.username = resp.displayName;
+                       localStorage.firstname =resp.displayName;
+
+                        $location.path('/dashboard'); 
+                   
+                   }, 1000);
+                        
+                        
+               });
+               
+           }
+       },
+       'approvalprompt': 'force',
+       'scope':'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profiles.read',
+   };    
+   gapi.auth.signIn(params);
+};   
+   
+   $scope.onFBlogin = function(){
+       
+       FB.login(function(response){
+           if(response.authResponse){
+               FB.api('/me', 'GET', {fields:'email, first_name, name, id'}, function(response){
+                   //console.log("resp", response);
+                   
+                   $scope.$apply(function() {
+
+                        $scope.username = response.name;
+                        $scope.password = response.name;
+                        $scope.email = response.email;
+
+                       localStorage.username = response.name;
+                       localStorage.firstname =response.name;
+                        $location.path('/dashboard'); 
+                   
+                   }, 1000);
+               });
+           } else {
+               //console.log('Login ctrl user not auth');
+           }
+       },{
+           scope: 'email',
+           return_scopes: true
+       });
+   }
+/**google and facebook */
  });

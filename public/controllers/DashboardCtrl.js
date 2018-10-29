@@ -133,9 +133,11 @@ $scope.editfile = function (index) {
     //console.log(file);
     var description = $scope.desc;
     var filesize= readableBytes(file.size);
-     
-    var filecreateddate = new Date().toJSON().slice(0, 19).replace('T', ' ');
-    var fileupdateddate = new Date().toJSON().slice(0, 19).replace('T', ' ');
+    var d = new Date();
+    var date_format_str = d.getFullYear().toString()+"-"+((d.getMonth()+1).toString().length==2?(d.getMonth()+1).toString():"0"+(d.getMonth()+1).toString())+"-"+(d.getDate().toString().length==2?d.getDate().toString():"0"+d.getDate().toString())+" "+(d.getHours().toString().length==2?d.getHours().toString():"0"+d.getHours().toString())+":"+((parseInt(d.getMinutes())).toString().length==2?(parseInt(d.getMinutes())).toString():"0"+(parseInt(d.getMinutes())).toString())+":"+((parseInt(d.getSeconds())).toString().length==2?(parseInt(d.getSeconds())).toString():"0"+(parseInt(d.getSeconds())).toString());
+      //console.log(date_format_str);
+    var filecreateddate = date_format_str;
+    var fileupdateddate = date_format_str;
     var username = localStorage.username;
     var formData = new FormData(); 
     formData.append("fileName", file);
