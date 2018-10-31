@@ -8,7 +8,7 @@
 **University  :** https://www.sjsu.edu  
 **Course      :** Cloud Technologies  
 **Professor   :** [Sanjay Garje](https://www.linkedin.com/in/sanjaygarje/)  
-**ISA         :** [Anushri Srinath Aithal](https://www.linkedin.com/in/anushri-aithal/) 
+**ISA         :** [Anushri Srinath Aithal](https://www.linkedin.com/in/anushri-aithal/)  
 **Student     :** Saikiran Pothana 
   
   
