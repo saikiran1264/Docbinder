@@ -7,8 +7,8 @@
 **Project     :** Docbinder  
 **University  :** https://www.sjsu.edu  
 **Course      :** Cloud Technologies  
-**Professor   :** Sanjay Garje  
-**ISA         :** Anushri Srinath Aithal  
+**Professor   :** [Sanjay Garje](https://www.linkedin.com/in/sanjaygarje/)  
+**ISA         :** [Anushri Srinath Aithal](https://www.linkedin.com/in/anushri-aithal/) 
 **Student     :** Saikiran Pothana 
   
   
@@ -56,6 +56,8 @@ Docbinder uses AWS services such as `S3` which is used to stored files,`Elastic 
 *14) Codepipeline:* It is configured for Continuous Integration and Continuous Deployement of my application considering source from Github, generating build from Jenkins configured in EC2 instance and deployed on Elastic Bean Stalk.  
 
 ### Architectural Diagram using AWS Components  
+![image](https://user-images.githubusercontent.com/42726386/47775730-c194af80-dcad-11e8-8224-910b8af25721.png)  
+
 ### Application Screenprints  
 ##### Login Page  
 ![image](https://user-images.githubusercontent.com/42726386/47756135-27594b00-dc5e-11e8-8f99-7a2014ce15b7.png)  
